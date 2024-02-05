@@ -16,10 +16,10 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-image: linear-gradient(rgba(86, 3, 3, 0.411), rgba(62, 20, 20, 0.4)), url(back.jpg);
     background-size: cover;
     background-position: center;
-    font-family: Lato;
+    font-family: serif Georgia;
     font-weight: 300;
     position: relative;
     height: 100vh;
@@ -68,26 +68,26 @@ body {
     text-align: center;
     font-size: 80px;
     font-weight: 100;
-    color: #EB4D4D;
+    color: #bd6147;
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
+.active { background-color: #f4d3d3; }
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
     content: "\2022";
     font-size: 47px;
     position: absolute;
-    color: #EB4D4D;
+    color: #d63e3e;
     top: -7px;
     right: 10px;
     
 }
 
 .player-current-box {
-    background-color: #EB4D4D;
-    color: #fff;
+    background-color: #b83131;
+    color: #f4d3d3;
     width: 40%;
     margin: 0 auto;
     padding: 12px;
@@ -145,12 +145,20 @@ i {
 
 .dice {
     position: absolute;
-    left: 50%;
+    left: 44%;
     top: 178px;
     transform: translateX(-50%);
     height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 10px 60px rgba(224, 92, 123, 0.155);
+}
+.dice2 {
+    position: absolute;
+    left: 56%;
+    top: 178px;
+    transform: translateX(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(224, 92, 123, 0.155);
 }
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+.winner { background-color: #d46487; }
+.winner .player-name { font-weight: 300; color: #9e214b; }

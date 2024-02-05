@@ -1,4 +1,4 @@
-/*
+ /*
 RREGULLAT E LOJËS:
 
 - Loja ka 2 lojtarë, që luajnë me rradhe
@@ -31,11 +31,19 @@ document.querySelector(".btn-roll").addEventListener("click",
 ()=>{
     if(!gameEnded){ // do not play a finished game
     round = Math.floor(Math.random()*6)+1;
+    round2 = Math.floor(Math.random()*6)+1;
     dice = document.querySelector(".dice");
+    dice2 = document.querySelector(".dice2");
     dice.src="dice-"+round+".png";
+    dice2.src="dice-"+round2+".png";
+    roundTotal=round+round2; 
     dice.style.display="block";
-    if(round!==1){ // keep going
-        roundScore+=round;
+    dice2.style.display="block";
+    console.log(round, round2)
+    
+    
+    if(round!==1 && round2 !=1){ // keep going
+        roundScore+=roundTotal;
         document.querySelector("#current-"+activePlayer).textContent=roundScore;
 
     }
@@ -44,6 +52,7 @@ document.querySelector(".btn-roll").addEventListener("click",
         document.querySelector("#current-"+activePlayer).textContent="0";
         activePlayer = (activePlayer+1)%2;
         document.querySelector(".dice").style.display="none";
+        document.querySelector(".dice2").style.display="none";
         document.querySelector(".player-0-panel").classList.toggle("active");
         document.querySelector(".player-1-panel").classList.toggle("active");
     }
@@ -59,7 +68,7 @@ if(!gameEnded){
     score[activePlayer] += roundScore;
     document.querySelector("#score-"+activePlayer).textContent=score[activePlayer];
 
-    if(score[activePlayer] >=100){
+    if(score[activePlayer] >=200){
 
         gameEnded=true;
         document.querySelector("#name-"+activePlayer).textContent="Winner!";
@@ -71,6 +80,7 @@ if(!gameEnded){
         document.querySelector("#current-"+activePlayer).textContent="0";
         activePlayer = (activePlayer+1)%2;
         document.querySelector(".dice").style.display="none";
+        document.querySelector(".dice2").style.display="none";
         document.querySelector(".player-0-panel").classList.toggle("active");
         document.querySelector(".player-1-panel").classList.toggle("active");
     }
